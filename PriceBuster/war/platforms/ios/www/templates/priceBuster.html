@@ -1,0 +1,38 @@
+<ion-view title="PriceBuster: Get the best deal!">
+  <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller='priceBusterCtrl'>
+    <div class="button-bar">
+      <a ui-sref="menu.signup" id="priceBuster-button3" class="button button-dark button-small button-block icon-left ">Sign Up</a>
+      <a ui-sref="menu.login" id="priceBuster-button4" class="button button-dark button-small button-block">Log In</a>
+    </div>
+    <form class="list" ng-submit="searchItem()">
+      <label class="item item-input" name="Search Box">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Scan UPC Code or Search by Name/Description" ng-model="inputSearch" ng-enter="searchItem()">
+      </label>
+    </form>
+    <ion-list> <ion-item
+      class="my-item" ng-repeat="item in items"
+      item-height="getItemHeight(item)"
+      id="{{ item.isSource ? (item.source + '_divider') : ''}}"
+      ng-style="{'line-height': getItemHeight(item) + 'px'}"
+      ng-class="{'item-divider': item.isSource}">
+      {{item.source}}
+      <div class="row" ng-if="!item.isSource"><a ng-href="{{item.url}}">
+        <div class="col col-80" ng-if="!item.isSource">
+          <img
+          ng-if="!item.isSource"
+          ng-src="{{item.image}}">
+        {{item.name}}
+        </div>
+      <div class="col">
+        <b>$ {{item.price}}</b>
+      </div>
+    </a>
+    </div>
+  </ion-item >
+ </ion-list>
+  <div class="button button-clear button-small button-assertive">{{msg}}</div>
+  <button id="priceBuster-button" class="button button-balanced button-block icon ion-ios-search" ng-click='searchItem()'> Search</button>
+  <button id="priceBuster-button8" class="button button-balanced  button-block icon ion-ios-barcode-outline" ng-click='scanBarcode()'> Scan Barcode</button>
+</ion-content>
+</ion-view>

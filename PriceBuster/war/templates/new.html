@@ -1,0 +1,28 @@
+<ion-view title="New Product">
+ <ion-content
+	overflow-scroll="true" padding="true" class="has-header"
+	ng-controller='newCtrl'>
+<form style="" class="list" ng-submit="createNew()">
+	<div class="row">
+		<input placeholder="Name" type="text" ng-model="inputName">
+	</div>
+	<div class="row">
+		<input placeholder="Description" type="text"
+			ng-model="inputDescription">
+	</div>
+	<div class="row">
+		<input placeholder="Category" type="text" ng-model="inputCategory">
+	</div>
+	<div class="row">
+		<input placeholder="Price" type="number" ng-model="inputPrice">
+	</div>
+	<div class="row">
+		<input placeholder="UPC" type="number" ng-model="inputUPC">
+	</div>
+	<div class="row">
+		<input placeholder="Image" type="text" ng-model="inputImage">
+	</div>
+</form>
+<button class="button button-balanced button-block" id="newProduct"
+	ng-click="createNew()">Submit!</button>
+</ion-content> </ion-view>

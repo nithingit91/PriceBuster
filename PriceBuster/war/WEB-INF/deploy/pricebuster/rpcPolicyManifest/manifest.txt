@@ -1,0 +1,3 @@
+# Module pricebuster
+# RPC service class, partial path of RPC policy file
+com.pricebuster.client.GreetingService, E6D6D2C655E97EF56DF9AADFC936A15A.gwt.rpc

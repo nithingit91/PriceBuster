@@ -1,0 +1,2 @@
+serviceClass: com.pricebuster.client.GreetingService
+path: E6D6D2C655E97EF56DF9AADFC936A15A.gwt.rpc

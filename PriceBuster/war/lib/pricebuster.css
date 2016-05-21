@@ -1,0 +1,30 @@
+/** Add css rules here for your application. */
+
+.item img {
+  height: 50px;
+  width: 50px;
+}
+
+.my-item.item {
+  margin: 0px;
+  padding: 0px;
+}
+
+.row {
+  height: 60px;
+  width: 100%;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.col {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  white-space: normal;
+}
+
+.full-width {
+  width: 100%;
+}

@@ -1,0 +1,152 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://pricebuster691.appspot.com/_ah/api",
+  "name" : "pricebuster691",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "discovery" : [ "PUBLIC" ],
+  "adapter" : {
+    "bns" : "https://pricebuster691.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "pricebuster691.products.getProduct" : {
+      "path" : "itemcollection/{input}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "728897095612-jsvlffkove01bgaq299rsmjbget9vm86.apps.googleusercontent.com" ],
+      "clientIds" : [ "728897095612-jsvlffkove01bgaq299rsmjbget9vm86.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID" ],
+      "rosyMethod" : "com.pricebuster.Products.getProduct",
+      "request" : {
+        "parameters" : {
+          "input" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "pricebuster691.products.listProduct" : {
+      "path" : "item",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "728897095612-jsvlffkove01bgaq299rsmjbget9vm86.apps.googleusercontent.com" ],
+      "clientIds" : [ "728897095612-jsvlffkove01bgaq299rsmjbget9vm86.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID" ],
+      "rosyMethod" : "com.pricebuster.Products.listProduct",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "pricebuster691.products.authed" : {
+      "path" : "helloproduct/authed",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "728897095612-jsvlffkove01bgaq299rsmjbget9vm86.apps.googleusercontent.com" ],
+      "clientIds" : [ "728897095612-jsvlffkove01bgaq299rsmjbget9vm86.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID" ],
+      "rosyMethod" : "com.pricebuster.Products.authedProduct",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "pricebuster691.products.update" : {
+      "path" : "item/{times}",
+      "httpMethod" : "post",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "728897095612-jsvlffkove01bgaq299rsmjbget9vm86.apps.googleusercontent.com" ],
+      "clientIds" : [ "728897095612-jsvlffkove01bgaq299rsmjbget9vm86.apps.googleusercontent.com", "replace this with your Android client ID", "replace this with your iOS client ID" ],
+      "rosyMethod" : "com.pricebuster.Products.updateProduct",
+      "request" : {
+        "parameters" : {
+          "times" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Item" : {
+        "id" : "Item",
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ItemCollection" : {
+        "id" : "ItemCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Item"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.pricebuster.Products.getProduct" : {
+        "response" : {
+          "$ref" : "ItemCollection"
+        }
+      },
+      "com.pricebuster.Products.listProduct" : {
+        "response" : {
+          "$ref" : "ItemCollection"
+        }
+      },
+      "com.pricebuster.Products.authedProduct" : {
+        "response" : {
+          "$ref" : "Item"
+        }
+      },
+      "com.pricebuster.Products.updateProduct" : {
+        "request" : {
+          "$ref" : "Item"
+        },
+        "response" : {
+          "$ref" : "Item"
+        }
+      }
+    }
+  }
+}

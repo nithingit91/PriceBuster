@@ -1,0 +1,29 @@
+<ion-view title="Product Details">
+ <ion-content
+	overflow-scroll="true" padding="true" class="has-header"
+	ng-controller='detailsCtrl'>
+   <p><img ng-src="{{currentItem.imageLarge}}"></p>
+
+    <label class="currentItem currentItem-input">
+      <span class="input-label">Name:</span>
+      <p>{{currentItem.name}}</p>
+    </label>
+
+    <label class="currentItem currentItem-input">
+      <span class="input-label">Description:</span>
+      <p>{{currentItem.description}}</p>
+    </label>
+
+    <label class="currentItem currentItem-input">
+      <span class="input-label">Store:</span>
+      <p>{{currentItem.store}}</p>
+    </label>
+
+<form style="" class="list" ng-submit="confirm()">
+
+<button class="button button-balanced button-block" id="confirm"
+	ng-click="confirm()">Confirm Price!</button>
+
+<button class="button button-balanced button-block" id="buy" href="#" onclick="windows.open('{{currentItem.url}}', '_self', 'location=yes')">Buy Item!</button>
+</form>
+</ion-content> </ion-view>
